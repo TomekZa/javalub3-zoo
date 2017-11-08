@@ -11,7 +11,7 @@ public class BlackBear extends Bear {
     @Override
     public boolean isHibernating() {
         new LocalDate(clock.getCurrentTime().getYear(), 11, 20);
-        
+
         return false;
     }
 
