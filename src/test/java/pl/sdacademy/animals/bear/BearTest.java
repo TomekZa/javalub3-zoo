@@ -14,4 +14,11 @@ class BearTest {
 
         assertTrue(result == true);
     }
+
+    @Test
+    void isHibernating() {
+
+        Bear bearHibernating = new BlackBear(3);
+    }
+
 }

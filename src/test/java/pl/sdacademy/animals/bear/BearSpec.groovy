@@ -3,6 +3,7 @@ package pl.sdacademy.animals.bear
 import org.joda.time.DateTime
 import org.joda.time.Duration
 import pl.sdacademy.clock.Clock
+import pl.sdacademy.clock.DateTimeClock
 import spock.lang.Specification
 
 
@@ -44,6 +45,18 @@ class BearSpec extends Specification {
 
         then:
         result == false
+    }
+
+    def "Bear is hebernating..."(){
+
+        given:
+        Bear bear = new BlackBear(1, new TestClock())
+        clock.getCurrentTime() >> new DateTime(2017, 12, 01, 14, 0)
+        when:
+        def result = bear.isHibernating()
+
+        then:
+        assertThat(result).isTrue()
     }
 
 }
